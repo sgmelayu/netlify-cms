@@ -51,8 +51,14 @@ class Collection extends React.Component {
   };
 
   renderEntriesCollection = () => {
-    const { collection } = this.props;
-    return <EntriesCollection collection={collection} viewStyle={this.state.viewStyle} />;
+    const { collection, filterTerm } = this.props;
+    return (
+      <EntriesCollection
+        collection={collection}
+        viewStyle={this.state.viewStyle}
+        filterTerm={filterTerm}
+      />
+    );
   };
 
   renderEntriesSearch = () => {
@@ -126,7 +132,7 @@ class Collection extends React.Component {
 function mapStateToProps(state, ownProps) {
   const { collections } = state;
   const { isSearchResults, match, t } = ownProps;
-  const { name, searchTerm } = match.params;
+  const { name, searchTerm, filterTerm } = match.params;
   const collection = name ? collections.get(name) : collections.first();
   const sort = selectEntriesSort(state.entries, collection.get('name'));
   const sortableFields = selectSortableFields(collection, t);
@@ -137,6 +143,7 @@ function mapStateToProps(state, ownProps) {
     collectionName: name,
     isSearchResults,
     searchTerm,
+    filterTerm,
     sort,
     sortableFields,
   };
