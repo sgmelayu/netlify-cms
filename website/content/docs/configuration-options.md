@@ -73,6 +73,8 @@ public_folder: "/images/uploads"
 
 Based on the settings above, if a user used an image widget field called `avatar` to upload and select an image called `philosoraptor.png`, the image would be saved to the repository at `/static/images/uploads/philosoraptor.png`, and the `avatar` field for the file would be set to `/images/uploads/philosoraptor.png`.
 
+This setting can be set to an absolute URL e.g. `https://netlify.com/media` should you wish, however in general this is not advisable as content should have relative paths to other content.
+
 ## Media Library
 
 Media library integrations are configured via the `media_library` property, and its value should be an object with at least a `name` property. A `config` property can also be used for options that should be passed to the library in use.
@@ -156,6 +158,20 @@ When a translation for the selected locale is missing the English one will be us
 ```yaml
 show_preview_links: false
 ```
+
+## Search
+
+The search functionally requires loading all collection(s) entries, which can exhaust rate limits on large repositories.
+It can be disabled by setting the top level `search` property to `false`.
+
+Defaults to `true`
+
+**Example:**
+
+```yaml
+search: false
+```
+
 
 ## Slug Type
 

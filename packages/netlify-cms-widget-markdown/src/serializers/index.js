@@ -7,6 +7,7 @@ import remarkToRehype from 'remark-rehype';
 import rehypeToHtml from 'rehype-stringify';
 import htmlToRehype from 'rehype-parse';
 import rehypeToRemark from 'rehype-remark';
+
 import remarkToRehypeShortcodes from './remarkRehypeShortcodes';
 import rehypePaperEmoji from './rehypePaperEmoji';
 import remarkAssertParents from './remarkAssertParents';
@@ -72,9 +73,7 @@ export function markdownToRemark(markdown) {
   /**
    * Further transform the MDAST with plugins.
    */
-  const result = unified()
-    .use(remarkSquashReferences)
-    .runSync(parsed);
+  const result = unified().use(remarkSquashReferences).runSync(parsed);
 
   return result;
 }
@@ -173,9 +172,7 @@ export function markdownToHtml(markdown, { getAsset, resolveWidget } = {}) {
  * pastes.
  */
 export function htmlToSlate(html) {
-  const hast = unified()
-    .use(htmlToRehype, { fragment: true })
-    .parse(html);
+  const hast = unified().use(htmlToRehype, { fragment: true }).parse(html);
 
   const mdast = unified()
     .use(rehypePaperEmoji)

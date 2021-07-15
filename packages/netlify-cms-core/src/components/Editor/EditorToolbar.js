@@ -16,8 +16,9 @@ import {
   buttons,
   zIndex,
 } from 'netlify-cms-ui-default';
-import { status } from 'Constants/publishModes';
-import SettingsDropdown from 'UI/SettingsDropdown';
+
+import { status } from '../../constants/publishModes';
+import { SettingsDropdown } from '../UI';
 
 const styles = {
   noOverflow: css`
@@ -39,6 +40,40 @@ const styles = {
     color: ${colorsRaw.teal};
   `,
 };
+
+const TooltipText = styled.div`
+  visibility: hidden;
+  width: 321px;
+  background-color: #555;
+  color: #fff;
+  text-align: unset;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 145%;
+  left: 50%;
+  margin-left: -320px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+`;
+
+const Tooltip = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover + ${TooltipText} {
+    visibility: visible;
+    opacity: 0.9;
+  }
+`;
+
+const TooltipContainer = styled.div`
+  position: relative;
+`;
 
 const DropdownButton = styled(StyledDropdownButton)`
   ${styles.noOverflow}
@@ -214,7 +249,7 @@ const StatusDropdownItem = styled(DropdownItem)`
   }
 `;
 
-class EditorToolbar extends React.Component {
+export class EditorToolbar extends React.Component {
   static propTypes = {
     isPersisting: PropTypes.bool,
     isPublishing: PropTypes.bool,
@@ -300,40 +335,69 @@ class EditorToolbar extends React.Component {
     );
   };
 
+  renderStatusInfoTooltip = () => {
+    const { t, currentStatus } = this.props;
+
+    const statusToLocaleKey = {
+      [status.get('DRAFT')]: 'statusInfoTooltipDraft',
+      [status.get('PENDING_REVIEW')]: 'statusInfoTooltipInReview',
+    };
+
+    const statusKey = Object.keys(statusToLocaleKey).find(key => key === currentStatus);
+    return (
+      <TooltipContainer>
+        <Tooltip>
+          <Icon type="info-circle" size="small" className="tooltip" />
+        </Tooltip>
+        {statusKey && (
+          <TooltipText>{t(`editor.editorToolbar.${statusToLocaleKey[statusKey]}`)}</TooltipText>
+        )}
+      </TooltipContainer>
+    );
+  };
+
   renderWorkflowStatusControls = () => {
     const { isUpdatingStatus, onChangeStatus, currentStatus, t, useOpenAuthoring } = this.props;
+
+    const statusToTranslation = {
+      [status.get('DRAFT')]: t('editor.editorToolbar.draft'),
+      [status.get('PENDING_REVIEW')]: t('editor.editorToolbar.inReview'),
+      [status.get('PENDING_PUBLISH')]: t('editor.editorToolbar.ready'),
+    };
+
+    const buttonText = isUpdatingStatus
+      ? t('editor.editorToolbar.updating')
+      : t('editor.editorToolbar.status', { status: statusToTranslation[currentStatus] });
+
     return (
-      <ToolbarDropdown
-        dropdownTopOverlap="40px"
-        dropdownWidth="120px"
-        renderButton={() => (
-          <StatusButton>
-            {isUpdatingStatus
-              ? t('editor.editorToolbar.updating')
-              : t('editor.editorToolbar.setStatus')}
-          </StatusButton>
-        )}
-      >
-        <StatusDropdownItem
-          label={t('editor.editorToolbar.draft')}
-          onClick={() => onChangeStatus('DRAFT')}
-          icon={currentStatus === status.get('DRAFT') ? 'check' : null}
-        />
-        <StatusDropdownItem
-          label={t('editor.editorToolbar.inReview')}
-          onClick={() => onChangeStatus('PENDING_REVIEW')}
-          icon={currentStatus === status.get('PENDING_REVIEW') ? 'check' : null}
-        />
-        {useOpenAuthoring ? (
-          ''
-        ) : (
+      <>
+        <ToolbarDropdown
+          dropdownTopOverlap="40px"
+          dropdownWidth="120px"
+          renderButton={() => <StatusButton>{buttonText}</StatusButton>}
+        >
           <StatusDropdownItem
-            label={t('editor.editorToolbar.ready')}
-            onClick={() => onChangeStatus('PENDING_PUBLISH')}
-            icon={currentStatus === status.get('PENDING_PUBLISH') ? 'check' : null}
+            label={t('editor.editorToolbar.draft')}
+            onClick={() => onChangeStatus('DRAFT')}
+            icon={currentStatus === status.get('DRAFT') ? 'check' : null}
           />
-        )}
-      </ToolbarDropdown>
+          <StatusDropdownItem
+            label={t('editor.editorToolbar.inReview')}
+            onClick={() => onChangeStatus('PENDING_REVIEW')}
+            icon={currentStatus === status.get('PENDING_REVIEW') ? 'check' : null}
+          />
+          {useOpenAuthoring ? (
+            ''
+          ) : (
+            <StatusDropdownItem
+              label={t('editor.editorToolbar.ready')}
+              onClick={() => onChangeStatus('PENDING_PUBLISH')}
+              icon={currentStatus === status.get('PENDING_PUBLISH') ? 'check' : null}
+            />
+          )}
+        </ToolbarDropdown>
+        {useOpenAuthoring && this.renderStatusInfoTooltip()}
+      </>
     );
   };
 
@@ -378,7 +442,7 @@ class EditorToolbar extends React.Component {
     );
   };
 
-  renderExistingEntryWorkflowPublishControls = ({ canCreate, canPublish }) => {
+  renderExistingEntryWorkflowPublishControls = ({ canCreate, canPublish, canDelete }) => {
     const { unPublish, onDuplicate, isPersisting, t } = this.props;
 
     return canPublish || canCreate ? (
@@ -393,7 +457,7 @@ class EditorToolbar extends React.Component {
           </PublishedToolbarButton>
         )}
       >
-        {canPublish && (
+        {canDelete && canPublish && (
           <DropdownItem
             label={t('editor.editorToolbar.unpublish')}
             icon="arrow"
@@ -501,6 +565,7 @@ class EditorToolbar extends React.Component {
       showDelete,
       hasChanged,
       hasUnpublishedChanges,
+      useOpenAuthoring,
       isPersisting,
       isDeleting,
       isNewEntry,
@@ -521,7 +586,7 @@ class EditorToolbar extends React.Component {
       <SaveButton key="save-button" onClick={() => hasChanged && onPersist()}>
         {isPersisting ? t('editor.editorToolbar.saving') : t('editor.editorToolbar.save')}
       </SaveButton>,
-      !showDelete && !hasUnpublishedChanges && !isModification ? null : (
+      (!showDelete || useOpenAuthoring) && !hasUnpublishedChanges && !isModification ? null : (
         <DeleteButton
           key="delete-button"
           onClick={hasUnpublishedChanges ? onDeleteUnpublishedChanges : onDelete}
@@ -537,6 +602,7 @@ class EditorToolbar extends React.Component {
 
     const canCreate = collection.get('create');
     const canPublish = collection.get('publish') && !useOpenAuthoring;
+    const canDelete = collection.get('delete', true);
 
     if (currentStatus) {
       return (
@@ -555,7 +621,7 @@ class EditorToolbar extends React.Component {
       return (
         <>
           {this.renderDeployPreviewControls(t('editor.editorToolbar.deployButtonLabel'))}
-          {this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish })}
+          {this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish, canDelete })}
         </>
       );
     }

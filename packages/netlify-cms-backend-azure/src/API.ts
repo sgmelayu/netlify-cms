@@ -3,12 +3,9 @@ import { partial, result, trim, trimStart } from 'lodash';
 import {
   localForage,
   APIError,
-  ApiRequest,
   unsentRequest,
   requestWithBackoff,
   responseParser,
-  AssetProxy,
-  PersistOptions,
   readFile,
   DEFAULT_PR_BODY,
   MERGE_COMMIT_MESSAGE,
@@ -20,11 +17,12 @@ import {
   statusToLabel,
   PreviewState,
   readFileMetadata,
-  DataFile,
   branchFromContentKey,
 } from 'netlify-cms-lib-util';
-import { Map } from 'immutable';
 import { dirname, basename } from 'path';
+
+import type { ApiRequest, AssetProxy, PersistOptions, DataFile } from 'netlify-cms-lib-util';
+import type { Map } from 'immutable';
 
 export const API_NAME = 'Azure DevOps';
 
@@ -304,7 +302,6 @@ export default class API {
     const url = result.coreAttributes?.Avatar?.value?.value;
     const user = {
       name: name || email || '',
-      // eslint-disable-next-line @typescript-eslint/camelcase
       avatar_url: `data:image/png;base64,${url}`,
       email,
     };
@@ -492,7 +489,6 @@ export default class API {
     return statuses.map(({ context, state, targetUrl }) => ({
       context: context.name,
       state: state === AzureCommitStatusState.SUCCEEDED ? PreviewState.Success : PreviewState.Other,
-      // eslint-disable-next-line @typescript-eslint/camelcase
       target_url: targetUrl,
     }));
   }

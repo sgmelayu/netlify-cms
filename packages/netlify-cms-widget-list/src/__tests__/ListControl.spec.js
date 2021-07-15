@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { fromJS } from 'immutable';
+
 import ListControl from '../ListControl';
 
 jest.mock('netlify-cms-widget-object', () => {
@@ -298,14 +299,14 @@ describe('ListControl', () => {
       ],
     });
 
-    const { getByText } = render(
+    const { getAllByText } = render(
       <ListControl
         {...props}
         field={field}
         value={fromJS([{ first_name: 'hello', last_name: 'world', type: 'type_1_object' }])}
       />,
     );
-    expect(getByText('type_1_object')).toBeInTheDocument();
+    expect(getAllByText('type_1_object')[1]).toBeInTheDocument();
   });
 
   it('should use label when no summary is configured for mixed types', () => {
@@ -326,14 +327,14 @@ describe('ListControl', () => {
       ],
     });
 
-    const { getByText } = render(
+    const { getAllByText } = render(
       <ListControl
         {...props}
         field={field}
         value={fromJS([{ first_name: 'hello', last_name: 'world', type: 'type_1_object' }])}
       />,
     );
-    expect(getByText('Type 1 Object')).toBeInTheDocument();
+    expect(getAllByText('Type 1 Object')[1]).toBeInTheDocument();
   });
 
   it('should use summary when configured for mixed types', () => {

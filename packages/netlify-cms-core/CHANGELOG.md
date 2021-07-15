@@ -3,6 +3,210 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.45.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-core@2.44.0...netlify-cms-core@2.45.0) (2021-07-07)
+
+
+### Features
+
+* pass markdown for hint message on field ([#5584](https://github.com/netlify/netlify-cms/issues/5584)) ([610421e](https://github.com/netlify/netlify-cms/commit/610421ea6722276e37fe3c6123386d20fbbac1cf))
+
+
+
+
+
+# [2.44.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-core@2.43.0...netlify-cms-core@2.44.0) (2021-07-07)
+
+
+### Features
+
+* show current status in status button ([#5574](https://github.com/netlify/netlify-cms/issues/5574)) ([fbc3728](https://github.com/netlify/netlify-cms/commit/fbc3728294b7eb23fb65cb47b3892c92d39b8148))
+
+
+
+
+
+# [2.43.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-core@2.42.0...netlify-cms-core@2.43.0) (2021-07-06)
+
+
+### Features
+
+* **open-authoring:** add hover tooltip ([#5567](https://github.com/netlify/netlify-cms/issues/5567)) ([1822815](https://github.com/netlify/netlify-cms/commit/1822815118b9d35fce8e65a8424f2cb748253ac3))
+
+
+
+
+
+# [2.42.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-core@2.41.0...netlify-cms-core@2.42.0) (2021-07-06)
+
+
+### Features
+
+* hide delete entry if open authoring ([#5568](https://github.com/netlify/netlify-cms/issues/5568)) ([9e4fd37](https://github.com/netlify/netlify-cms/commit/9e4fd37d1127af2916d04db5c0fff7bb45efe473))
+
+
+
+
+
+# [2.41.0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.12...netlify-cms-core@2.41.0) (2021-06-24)
+
+
+### Features
+
+* make search optional ([58bfa2d](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/58bfa2d96efd6d14410cb9c453b8291b90008562))
+
+
+
+
+
+## [2.40.12](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.11...netlify-cms-core@2.40.12) (2021-06-10)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.11](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.10...netlify-cms-core@2.40.11) (2021-06-01)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.10](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.9...netlify-cms-core@2.40.10) (2021-05-31)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.9](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.8...netlify-cms-core@2.40.9) (2021-05-30)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.8](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.7...netlify-cms-core@2.40.8) (2021-05-30)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.7](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.6...netlify-cms-core@2.40.7) (2021-05-30)
+
+
+### Bug Fixes
+
+* **types:** mark registerEventListener options as optional ([#5443](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5443)) ([3f351ea](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/3f351ea745a9a464d695c2574d43c9894db3fea9))
+
+
+
+
+
+## [2.40.6](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.5...netlify-cms-core@2.40.6) (2021-05-23)
+
+
+### Bug Fixes
+
+* **deps:** update react-dnd monorepo (major) ([#5405](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5405)) ([5974ee8](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/5974ee83112658e86a265049a72a577cafbb93a4))
+
+
+
+
+
+## [2.40.5](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.4...netlify-cms-core@2.40.5) (2021-05-19)
+
+**Note:** Version bump only for package netlify-cms-core
+
+
+
+
+
+## [2.40.4](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.3...netlify-cms-core@2.40.4) (2021-05-19)
+
+
+### Bug Fixes
+
+* **config:** allow empty public folder for collection,file,field ([#5391](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5391)) ([558b21f](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/558b21f7002e3239d7632674fe57886425f7e15b))
+
+
+
+
+
+## [2.40.3](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.2...netlify-cms-core@2.40.3) (2021-05-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-sortable-hoc to v2 ([#5371](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5371)) ([b5dabc2](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/b5dabc212953348bee83d41c36ca1f949c87b6b5))
+
+
+
+
+
+## [2.40.2](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.1...netlify-cms-core@2.40.2) (2021-05-12)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-scroll-sync to ^0.9.0 ([#5370](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5370)) ([bd9adda](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/bd9adda64adbbea4a8c6c036c5f450250b272bb1))
+
+
+
+
+
+## [2.40.1](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.40.0...netlify-cms-core@2.40.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* type for CmsEventListener handler property ([#5353](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5353)) ([db66c7e](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/db66c7e8ddb6c6969f4f9d786bd7981514e01f2d))
+
+
+
+
+
+# [2.40.0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.39.8...netlify-cms-core@2.40.0) (2021-05-04)
+
+
+### Features
+
+* added react 17 as peer dependency in packages ([#5316](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5316)) ([9e42380](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/9e423805707321396eec137f5b732a5b07a0dd3f))
+
+
+
+
+
+## [2.39.8](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.39.7...netlify-cms-core@2.39.8) (2021-05-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-waypoint to v10 ([#5329](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5329)) ([fc908b7](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/fc908b7489bb3167998af372c68628e1b609e6cf))
+
+
+
+
+
+## [2.39.7](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.39.6...netlify-cms-core@2.39.7) (2021-04-29)
+
+
+### Bug Fixes
+
+* allow absolute urls in public_folder ([#5311](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5311)) ([d1bcbe0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/d1bcbe0a4c06e1ecc6ab1b46e7b16b8eac41bf8a))
+* Remove `Unpublish` UI button if  collection has a `delete: false`. ([#3887](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/3887)) ([#5314](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5314)) ([724d172](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/724d172cf03256782e764cf8abb0b3920c6da435))
+* **deps:** update dependency react-frame-component to v5 ([#5299](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/issues/5299)) ([b8eea35](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/commit/b8eea354795729f89e9603d1a8344cb52954bb92))
+
+
+
+
+
 ## [2.39.6](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-core/compare/netlify-cms-core@2.39.5...netlify-cms-core@2.39.6) (2021-04-18)
 
 **Note:** Version bump only for package netlify-cms-core

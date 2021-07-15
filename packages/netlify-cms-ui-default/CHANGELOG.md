@@ -3,6 +3,75 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.14.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-ui-default@2.13.4...netlify-cms-ui-default@2.14.0) (2021-07-06)
+
+
+### Features
+
+* **open-authoring:** add hover tooltip ([#5567](https://github.com/netlify/netlify-cms/issues/5567)) ([1822815](https://github.com/netlify/netlify-cms/commit/1822815118b9d35fce8e65a8424f2cb748253ac3))
+
+
+
+
+
+## [2.13.4](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.13.3...netlify-cms-ui-default@2.13.4) (2021-06-01)
+
+**Note:** Version bump only for package netlify-cms-ui-default
+
+
+
+
+
+## [2.13.3](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.13.2...netlify-cms-ui-default@2.13.3) (2021-05-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-aria-menubutton to v7 ([#5382](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5382)) ([8ec9ba0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/8ec9ba0747dcae8561d5f530b76897724574d941))
+
+
+
+
+
+## [2.13.2](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.13.1...netlify-cms-ui-default@2.13.2) (2021-05-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-aria-menubutton to v7 ([#5378](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5378)) ([2dd8944](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/2dd89446aab5dcf81a8546b8da45082953bdb364))
+* **deps:** update dependency react-transition-group to v4 ([#5385](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5385)) ([f0725a8](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/f0725a83799f54cc442566ad036d493ad3a7ce6f))
+
+
+### Reverts
+
+* Revert "fix(deps): update dependency react-aria-menubutton to v7 (#5378)" (#5380) ([5b0ba81](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/5b0ba8124e5d0112dfc315fde83590aa88f58144)), closes [#5378](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5378) [#5380](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5380)
+
+
+
+
+
+## [2.13.1](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.13.0...netlify-cms-ui-default@2.13.1) (2021-05-09)
+
+
+### Bug Fixes
+
+* buttons use inherited font stack ([#5344](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5344)) ([2143cd3](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/2143cd30fd410098f629902c8ca1ce75535f5a54))
+
+
+
+
+
+# [2.13.0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.12.2...netlify-cms-ui-default@2.13.0) (2021-05-04)
+
+
+### Features
+
+* added react 17 as peer dependency in packages ([#5316](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/issues/5316)) ([9e42380](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/commit/9e423805707321396eec137f5b732a5b07a0dd3f))
+
+
+
+
+
 ## [2.12.2](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-ui-default/compare/netlify-cms-ui-default@2.12.1...netlify-cms-ui-default@2.12.2) (2021-04-01)
 
 

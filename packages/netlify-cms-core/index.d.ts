@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 declare module 'netlify-cms-core' {
-  import React, { ComponentType } from 'react';
-  import { List, Map } from 'immutable';
+  import type { ComponentType } from 'react';
+  import type { List, Map } from 'immutable';
 
   export type CmsBackendType =
     | 'azure'
@@ -308,6 +308,7 @@ declare module 'netlify-cms-core' {
     preview_path_date_field?: string;
     create?: boolean;
     delete?: boolean;
+    hide?: boolean;
     editor?: {
       preview?: boolean;
     };
@@ -346,6 +347,7 @@ declare module 'netlify-cms-core' {
     name: CmsBackendType;
     auth_scope?: CmsAuthScope;
     open_authoring?: boolean;
+    always_fork?: boolean;
     repo?: string;
     branch?: string;
     api_root?: string;
@@ -482,7 +484,13 @@ declare module 'netlify-cms-core' {
 
   export interface CmsEventListener {
     name: 'prePublish' | 'postPublish' | 'preUnpublish' | 'postUnpublish' | 'preSave' | 'postSave';
-    handler: { entry: Map<string, any>; author: { login: string; name: string } };
+    handler: ({
+      entry,
+      author,
+    }: {
+      entry: Map<string, any>;
+      author: { login: string; name: string };
+    }) => any;
   }
 
   export type CmsEventListenerOptions = any; // TODO: type properly
@@ -510,9 +518,12 @@ declare module 'netlify-cms-core' {
     };
   }
 
-  type GetAssetFunction = (
-    asset: string,
-  ) => { url: string; path: string; field?: any; fileObj: File };
+  type GetAssetFunction = (asset: string) => {
+    url: string;
+    path: string;
+    field?: any;
+    fileObj: File;
+  };
 
   export type PreviewTemplateComponentProps = {
     entry: Map<string, any>;
@@ -525,6 +536,8 @@ declare module 'netlify-cms-core' {
     config: Map<string, any>;
     fields: List<Map<string, any>>;
     isLoadingAsset: boolean;
+    window: Window;
+    document: Document;
   };
 
   export interface CMS {
@@ -541,7 +554,7 @@ declare module 'netlify-cms-core' {
     registerEditorComponent: (options: EditorComponentOptions) => void;
     registerEventListener: (
       eventListener: CmsEventListener,
-      options: CmsEventListenerOptions,
+      options?: CmsEventListenerOptions,
     ) => void;
     registerLocale: (locale: string, phrases: CmsLocalePhrases) => void;
     registerMediaLibrary: (mediaLibrary: CmsMediaLibrary, options?: CmsMediaLibraryOptions) => void;

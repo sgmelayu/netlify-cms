@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.33.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-locales@1.32.0...netlify-cms-locales@1.33.0) (2021-07-07)
+
+
+### Features
+
+* show current status in status button ([#5574](https://github.com/netlify/netlify-cms/issues/5574)) ([fbc3728](https://github.com/netlify/netlify-cms/commit/fbc3728294b7eb23fb65cb47b3892c92d39b8148))
+
+
+
+
+
+# [1.32.0](https://github.com/netlify/netlify-cms/compare/netlify-cms-locales@1.31.0...netlify-cms-locales@1.32.0) (2021-07-06)
+
+
+### Features
+
+* **open-authoring:** add hover tooltip ([#5567](https://github.com/netlify/netlify-cms/issues/5567)) ([1822815](https://github.com/netlify/netlify-cms/commit/1822815118b9d35fce8e65a8424f2cb748253ac3))
+
+
+
+
+
+# [1.31.0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/compare/netlify-cms-locales@1.30.2...netlify-cms-locales@1.31.0) (2021-06-07)
+
+
+### Features
+
+* updating czech translation ([#5473](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/issues/5473)) ([e249f9f](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/commit/e249f9f7f7e687b49345cea75b4272e6df791c76))
+
+
+
+
+
+## [1.30.2](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/compare/netlify-cms-locales@1.30.1...netlify-cms-locales@1.30.2) (2021-05-30)
+
+
+### Bug Fixes
+
+* **locales-nb_no:** fix spelling in deleteEntry ([#5442](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/issues/5442)) ([f296e40](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/commit/f296e40d6fc4399c3b898799b4e008d4d04aceba))
+
+
+
+
+
+## [1.30.1](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/compare/netlify-cms-locales@1.30.0...netlify-cms-locales@1.30.1) (2021-05-04)
+
+
+### Bug Fixes
+
+* **locale:** add missing keys to 'sv' locale ([#5341](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/issues/5341)) ([7f7fa40](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/commit/7f7fa401ad83620b7f90205b8bd1f7b658cc53ad))
+
+
+
+
+
 # [1.30.0](https://github.com/netlify/netlify-cms/tree/master/packages/netlify-cms-locales/compare/netlify-cms-locales@1.29.2...netlify-cms-locales@1.30.0) (2021-04-13)
 
 
